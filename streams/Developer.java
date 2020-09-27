@@ -52,11 +52,16 @@ public class Developer {
         }
         System.out.println(set);
 
-        /*   Stream<String> uniqueWords =
-                Stream.of("merrily", "merrily", "merrily", "gently").distinct();
-        uniqueWords.forEach(s -> System.out.println(s)));
-
-      */
+// другой варик
+        List<Developer> developersWithUniqueLanguages = developerStream
+                .flatMap(developer -> developer.getLanguages().stream()
+                        .map(language -> new AbstractMap.SimpleEntry<>(language, developer))
+                )
+                .collect(Collectors.toMap(AbstractMap.SimpleEntry::getKey, AbstractMap.SimpleEntry::getValue, (a, b) -> null))
+                .values().stream()
+                .filter(Objects::nonNull)
+                .distinct()
+                .collect(Collectors.toList());
     }
 
     public String getName() {
