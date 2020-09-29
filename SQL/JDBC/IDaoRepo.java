@@ -1,17 +1,15 @@
 package ru.Aidar.SQL.JDBC;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
 
-public interface IController<E> {
+public interface IDaoRepo<E> {
 
     public abstract List<E> getAll(String filter);
 
     public abstract List<E> getAllPagination(int start, int number);
 
-    public abstract ResultSet getAllPaginationSet(String filter, int fetchSize);
 
     public abstract E getById(int id) throws SQLException;
 

@@ -3,14 +3,14 @@ package ru.Aidar.SQL.JDBC;
 import java.sql.SQLException;
 
 public class UserApplication {
-    private static UserDaoController userDao;
+    private static UserJDBCDaoRepo userDao;
 
     public static void main(String[] args) throws SQLException {
         //getAll
-        userDao = new UserDaoController();
+        userDao = new UserJDBCDaoRepo();
         userDao.getAll(null).forEach(user -> System.out.println(user));
         System.out.println("filtred get all: id+gender=1");
-        userDao.getAll("where id_gender =1").forEach(user -> System.out.println(user));
+        userDao.getAll(" where id_gender =1").forEach(user -> System.out.println(user));
         //getById
         System.out.println("getById = 1");
         System.out.println(userDao.getById(1));
@@ -36,6 +36,4 @@ public class UserApplication {
         userDao.closePrepareStatement();
         System.out.println();
     }
-
-
 }
