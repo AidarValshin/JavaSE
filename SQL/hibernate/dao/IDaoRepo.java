@@ -1,4 +1,4 @@
-package ru.Aidar.SQL.JDBC;
+package ru.Aidar.SQL.hibernate.dao;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -13,12 +13,12 @@ public interface IDaoRepo<E> {
 
     public abstract E getById(int id) throws SQLException;
 
-    public abstract int update(int id, String[] params, int id_genre);
+    public abstract void update(int id, String[] params, int id_genre);
 
-    public abstract int delete(int id) throws SQLException;
+    public abstract void delete(int id) throws SQLException;
 
     public abstract int insert(String[] params, int id_genre);
 
-    public abstract void closePrepareStatement();
+
 
 }

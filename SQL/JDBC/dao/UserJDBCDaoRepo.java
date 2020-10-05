@@ -1,4 +1,7 @@
-package ru.Aidar.SQL.JDBC;
+package ru.Aidar.SQL.JDBC.dao;
+
+import ru.Aidar.SQL.JDBC.connection.ConnectionToBd;
+import ru.Aidar.SQL.JDBC.models.User;
 
 import java.sql.*;
 import java.util.ArrayList;

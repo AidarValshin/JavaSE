@@ -1,4 +1,4 @@
-package ru.Aidar.SQL.JDBC;
+package ru.Aidar.SQL.JDBC.connection;
 
 import java.sql.DriverManager;
 import java.sql.SQLException;

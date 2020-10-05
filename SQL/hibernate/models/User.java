@@ -1,20 +1,17 @@
-package ru.Aidar.SQL.JDBC;
+package ru.Aidar.SQL.hibernate.models;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "part2.user")
 public class User {
-    private static int id = 1;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_cont;// идентификатор абонента
     private String first_name;//имя
     private String middle_name;// отчество
     private String last_name;//фамилия
     private int id_gender;//идентификатор пола 1-м, 2-ж
-
-    public User(String first_name, String middle_name, String last_name, int id_gender) {
-        this.id_cont = id++;
-        this.first_name = first_name;
-        this.middle_name = middle_name;
-        this.last_name = last_name;
-        this.id_gender = id_gender;
-    }
 
     public User(int id_cont, String first_name, String middle_name, String last_name, int id_gender) {
         this.id_cont = id_cont;
@@ -22,6 +19,16 @@ public class User {
         this.middle_name = middle_name;
         this.last_name = last_name;
         this.id_gender = id_gender;
+    }
+
+    public User( String first_name, String middle_name, String last_name, int id_gender) {
+        this.first_name = first_name;
+        this.middle_name = middle_name;
+        this.last_name = last_name;
+        this.id_gender = id_gender;
+    }
+
+    public User() {
     }
 
 
