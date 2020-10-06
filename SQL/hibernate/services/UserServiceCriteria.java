@@ -1,16 +1,16 @@
 package ru.Aidar.SQL.hibernate.services;
 
 import ru.Aidar.SQL.hibernate.dao.IDaoRepo;
-import ru.Aidar.SQL.hibernate.dao.UserDaoImpl;
+import ru.Aidar.SQL.hibernate.dao.UserDaoImplCriteria;
 import ru.Aidar.SQL.hibernate.models.User;
 
 import java.sql.SQLException;
 import java.util.List;
 
-public class UserService {
-    private IDaoRepo usersDao = new UserDaoImpl();
+public class UserServiceCriteria {
+    private IDaoRepo usersDao = new UserDaoImplCriteria();
 
-    public UserService() {
+    public UserServiceCriteria() {
     }
 
     public User findUser(int id) throws SQLException {

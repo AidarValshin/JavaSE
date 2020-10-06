@@ -9,7 +9,7 @@ import ru.Aidar.SQL.hibernate.utils.HibernateSessionFactoryUtil;
 
 import java.util.List;
 
-public class UserDaoImpl implements IDaoRepo<User> {
+public class UserDaoImplCriteria implements IDaoRepo<User> {
 
     @Override
     public List<User> getAll(String filter) {
